@@ -15,7 +15,7 @@ typedef NS_ENUM(NSUInteger, MBTabbarViewControllerStyle) {
 
 /** 点击凸起按钮出发视图切换类型 */
 typedef NS_ENUM(NSUInteger, MBTabbarViewControllerBuldgeControl) {
-    MBTabbarViewControllerBuldgeControlModally  = 0,    // 跳转/出发功能
+    MBTabbarViewControllerBuldgeControlModally  = 0,    // 跳转/触发功能
     MBTabbarViewControllerBuldgeControlChild    = 1,    // 当前页面变更(subView)
 };
 
