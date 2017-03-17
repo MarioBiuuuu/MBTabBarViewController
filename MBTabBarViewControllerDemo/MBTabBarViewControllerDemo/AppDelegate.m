@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MBTabBarViewController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    MBTabBarViewController *tabVC = [[MBTabBarViewController alloc] initWithTabBarStyle:MBTabbarViewControllerStyleBulge bulgeBtnTitle:@"" bulgeBtnImage:[UIImage imageNamed:@"5"]];
+    MBTabBarViewController *tabVC = [[MBTabBarViewController alloc] initWithTabBarStyle:MBTabbarViewControllerStyleBulge bulgeBtnTitle:@"HelloWorld" bulgeBtnImage:[UIImage imageNamed:@"5"]];
     
     UIViewController *vc1 = [[UIViewController alloc] init];
     vc1.view.backgroundColor = [UIColor redColor];
@@ -32,10 +33,20 @@
     UIViewController *vc4 = [[UIViewController alloc] init];
     vc4.view.backgroundColor = [UIColor grayColor];
     
+    ViewController *vc5 = [[ViewController alloc] init];
+    vc5.view.backgroundColor = [UIColor yellowColor];
+    
     [tabVC addChildVc:vc1 title:@"Title1" image:[UIImage imageNamed:@"1"] selectedImage:[UIImage imageNamed:@"1"]];
     [tabVC addChildVc:vc2 title:@"Title2" image:[UIImage imageNamed:@"2"] selectedImage:[UIImage imageNamed:@"1"]];
     [tabVC addChildVc:vc3 title:@"Title3" image:[UIImage imageNamed:@"3"] selectedImage:[UIImage imageNamed:@"1"]];
     [tabVC addChildVc:vc4 title:@"Title4" image:[UIImage imageNamed:@"4"] selectedImage:[UIImage imageNamed:@"1"]];
+    
+    tabVC.selectionIndicatorColor = [UIColor redColor];
+    tabVC.tabBarBackgroundColor = [UIColor blueColor];
+    tabVC.tabBarSelectedTitleColor = [UIColor yellowColor];
+    tabVC.tabBarNormalTitleColor = [UIColor grayColor];
+    tabVC.tabbarViewControllerBuldgeControl = MBTabbarViewControllerBuldgeControlChild;
+    tabVC.centerViewController = vc5;
     
     self.window = [[UIWindow alloc] init];
     self.window.rootViewController = tabVC;
